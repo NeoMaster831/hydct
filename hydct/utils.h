@@ -33,10 +33,10 @@
 
 #else
 
-#define HV_LOG_ERROR(Format, ...)
-#define HV_LOG_WARNING(Format, ...)
-#define HV_LOG_INFO(Format, ...)
-#define HV_LOG_TRACE(Format, ...)
+#define HD_LOG_ERROR(Format, ...)
+#define HD_LOG_WARNING(Format, ...)
+#define HD_LOG_INFO(Format, ...)
+#define HD_LOG_TRACE(Format, ...)
 
 #endif
 
