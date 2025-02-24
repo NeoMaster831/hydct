@@ -15,19 +15,19 @@
 //
 #if DBG
 
-#define HV_LOG_ERROR(Format, ...)                                              \
+#define HD_LOG_ERROR(Format, ...)                                              \
   DbgPrintEx(DPFLTR_IHVDRIVER_ID, DBG_ERROR,                                   \
              "ERROR: [Hydct] " Format "\n", __VA_ARGS__)
 
-#define HV_LOG_WARNING(Format, ...)                                            \
+#define HD_LOG_WARNING(Format, ...)                                            \
   DbgPrintEx(DPFLTR_IHVDRIVER_ID, DBG_WARNING,                                 \
              "WARNING: [Hydct] " Format "\n", __VA_ARGS__)
 
-#define HV_LOG_INFO(Format, ...)                                               \
+#define HD_LOG_INFO(Format, ...)                                               \
   DbgPrintEx(DPFLTR_IHVDRIVER_ID, DBG_INFO, "INFO: [Hydct] " Format "\n", \
              __VA_ARGS__)
 
-#define HV_LOG_TRACE(Format, ...)                                              \
+#define HD_LOG_TRACE(Format, ...)                                              \
   DbgPrintEx(DPFLTR_IHVDRIVER_ID, DBG_TRACE,                                   \
              "TRACE: [Hydct] " Format "\n", __VA_ARGS__)
 
