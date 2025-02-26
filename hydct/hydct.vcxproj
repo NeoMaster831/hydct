@@ -107,9 +107,14 @@
     <FilesToPackage Include="$(TargetPath)" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="d_rdtsc.c" />
+    <ClCompile Include="ioctl.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="d_rdtsc.h" />
+    <ClInclude Include="global.h" />
+    <ClInclude Include="ioctl.h" />
     <ClInclude Include="utils.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
