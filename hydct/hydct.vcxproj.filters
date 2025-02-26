@@ -23,6 +23,12 @@
     <Filter Include="Source Files\detections">
       <UniqueIdentifier>{0e20f1be-0411-4013-b52d-c45e8045bbc4}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\ds">
+      <UniqueIdentifier>{7f4330fd-dfd8-41ec-aa6f-796fc1c04649}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\ds">
+      <UniqueIdentifier>{e1d70993-4a18-4dd3-bea0-90a781d63643}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <Inf Include="hydct.inf">
@@ -39,6 +45,9 @@
     <ClCompile Include="d_rdtsc.c">
       <Filter>Source Files\detections</Filter>
     </ClCompile>
+    <ClCompile Include="dspq.c">
+      <Filter>Source Files\ds</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.h">
@@ -52,6 +61,9 @@
     </ClInclude>
     <ClInclude Include="d_rdtsc.h">
       <Filter>Header Files\detections</Filter>
+    </ClInclude>
+    <ClInclude Include="dspq.h">
+      <Filter>Header Files\ds</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
