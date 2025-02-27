@@ -66,9 +66,16 @@ NTSTATUS IoctlHandle(_In_ PDEVICE_OBJECT DeviceObject, _In_ PIRP Irp) {
       goto INVALID_IOCTL;
 
     switch (irpSp->Parameters.DeviceIoControl.IoControlCode) {
-    case IOCTL_HYDCT_RDTSC_CHECK: {
-      BOOL detected = DctRdtscCheck();
+    case IOCTL_HYDCT_RDTSC_CHECK: 
+    case IOCTL_HYDCT_GARBAGE_WRITE_TO_MSR: 
+    {
+
+      UINT64 number = (((irpSp->Parameters.DeviceIoControl.IoControlCode) >> 2) & 0xFF);
+      
+      PVOID fn = g_IoctlDVArr[number];
+      BOOL detected = ((BOOL(*)())(fn))();
       *(BOOL*)ioBuf = detected;
+
     } break;
 
     default:
@@ -99,3 +106,8 @@ VOID IoctlTerminate(PDRIVER_OBJECT DriverObject) {
   IoDeleteSymbolicLink(&symLinkName);
   IoDeleteDevice(DriverObject->DeviceObject);
 }
+
+PVOID g_IoctlDVArr[DETECTION_VECTORS_COUNT] = {
+  (PVOID)DctRdtscCheck,
+  (PVOID)DctGarbageWriteToMsr
+};

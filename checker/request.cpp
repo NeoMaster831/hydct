@@ -1,19 +1,29 @@
 #include "request.h"
 
-std::tuple<bool, bool> Req::RdtscCheck() {
+REQ_TYPE Req::ReqWrapper(const DWORD type) {
   DWORD out = TRUE;
-
   if (!Ioctl::Request(
-    GloVar::Ioctl::IOCTL_HYDCT_RDTSC_CHECK,
+    type,
     NULL,
     0,
     &out,
     sizeof(DWORD)
   )) {
     LogConsole("Failed to send request.\n");
-    return std::tuple<bool, bool>(false, false);
+    return REQ_TYPE(false, false);
   }
-
-  LogConsole("Request sent.\n");
-  return std::tuple<bool, bool>(true, out != FALSE);
+  return REQ_TYPE(true, out != FALSE);
 }
+
+REQ_TYPE Req::RdtscCheck() {
+  return ReqWrapper(GloVar::Ioctl::IOCTL_HYDCT_RDTSC_CHECK);
+}
+
+REQ_TYPE Req::GarbageWriteToMsr() {
+  return ReqWrapper(GloVar::Ioctl::IOCTL_HYDCT_GARBAGE_WRITE_TO_MSR);
+}
+
+PVOID g_Checks[DETECTION_VECTOR_COUNT] = {
+  Req::RdtscCheck,
+  Req::GarbageWriteToMsr
+};

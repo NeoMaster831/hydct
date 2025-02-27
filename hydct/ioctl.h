@@ -3,6 +3,7 @@
 #include "global.h"
 
 #include "d_rdtsc.h"
+#include "d_gmsrw.h"
 
 typedef struct _DEVICE_EXTENSION {
   UNICODE_STRING DeviceName;
@@ -29,3 +30,5 @@ NTSTATUS IoctlHandle(_In_ PDEVICE_OBJECT DeviceObject, _In_ PIRP Irp);
  * @brief Terminate the IOCTL interface
  */
 VOID IoctlTerminate(PDRIVER_OBJECT DriverObject);
+
+extern PVOID g_IoctlDVArr[DETECTION_VECTORS_COUNT];

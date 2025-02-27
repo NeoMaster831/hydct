@@ -108,12 +108,14 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dspq.c" />
+    <ClCompile Include="d_gmsrw.c" />
     <ClCompile Include="d_rdtsc.c" />
     <ClCompile Include="ioctl.c" />
     <ClCompile Include="main.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="dspq.h" />
+    <ClInclude Include="d_gmsrw.h" />
     <ClInclude Include="d_rdtsc.h" />
     <ClInclude Include="global.h" />
     <ClInclude Include="ioctl.h" />

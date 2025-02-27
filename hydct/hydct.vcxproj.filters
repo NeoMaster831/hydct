@@ -48,6 +48,9 @@
     <ClCompile Include="dspq.c">
       <Filter>Source Files\ds</Filter>
     </ClCompile>
+    <ClCompile Include="d_gmsrw.c">
+      <Filter>Source Files\detections</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="utils.h">
@@ -64,6 +67,9 @@
     </ClInclude>
     <ClInclude Include="dspq.h">
       <Filter>Header Files\ds</Filter>
+    </ClInclude>
+    <ClInclude Include="d_gmsrw.h">
+      <Filter>Header Files\detections</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
